@@ -1,25 +1,16 @@
 <?php
-
    $connection = mysqli_connect('localhost', 'root', 'mysql', 'firsapp');
-
    if ($connection) {
-
     echo "We are connected";
    } else {
-
     die("Database connection failed");
    }
 
-
 $query = "SELECT * FROM users";
-
-
 $result = mysqli_query($connection, $query);
-
 if (!$result) {
     die('Query FAILED' . mysqli_error("init"));
 }
-
 ?>
 
 <!DOCTYPE html>

@@ -6,16 +6,11 @@ if (isset($_POST['submit'])) {
    $password = $_POST['password'];
 
    $connection = mysqli_connect('localhost', 'root', 'mysql', 'firsapp');
-
    if ($connection) {
-
     echo "We are connected";
    } else {
-
     die("Database connection failed");
    }
-
-
 $query = "INSERT INTO users(username,password) ";
 $query  .= "VALUES ('$username', '$password')";
 
@@ -39,7 +34,7 @@ if (!$result) {
 <body>
     <div class="container">
         <div class="col-sm-6">
-            <form action="login.php" method="post">
+            <form action="create.php" method="post">
                 <div class="form-group">
                     <label for="username">Username</label>
                     <input type="text" name="username" class="form-control">
