@@ -1,5 +1,41 @@
 <?php include "db.php";?>
 <?php
+
+function createRows() {
+if (isset($_POST['submit'])) {
+    global $connection;
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+ 
+    $connection = mysqli_connect('localhost', 'root', 'mysql', 'firsapp');
+    if (!$connection) {
+     die("Database connection failed");
+    }
+ $query = "INSERT INTO users(username,password) ";
+ $query  .= "VALUES ('$username', '$password')";
+ 
+ $result = mysqli_query($connection, $query);
+ 
+ if (!$result) {
+     die('Query FAILED' . mysqli_error($connection));
+    } else {
+        echo "Record created";
+    }
+  }
+}
+
+function readRows() {
+    global $connection;
+    $query = "SELECT * FROM users";
+    $result = mysqli_query($connection, $query);
+    if (!$result) {
+        die('Query FAILED' . mysqli_error("init"));
+    }
+     while ($row = mysqli_fetch_assoc($result)) {
+        print_r($row);
+    }
+}
+
 function showAllDAta() {
    global $connection;
    $connection = mysqli_connect('localhost', 'root', 'mysql', 'firsapp');
@@ -18,7 +54,8 @@ while ($row = mysqli_fetch_assoc($result)) {
 }
 
 function updateTable() {
-$username = $_POST['username'];
+if (isset($_POST['submit'])) {
+   $username = $_POST['username'];
    $password = $_POST['password'];
    $id = $_POST['id'];
 
@@ -30,10 +67,14 @@ $username = $_POST['username'];
    $result = mysqli_query($connection, $query);
    if (!$result) {
     die('Query FAILED' . mysqli_error("init"));
+   } else {
+     echo "Record updated";
    }
+  }
 }
 
 function deleteRows() {
+    if (isset($_POST['submit'])) {
        global $connection;
        $username = $_POST['username'];
        $password = $_POST['password'];
@@ -41,10 +82,13 @@ function deleteRows() {
     
        $query = "DELETE FROM users ";
        $query .= "WHERE id = $id ";
-       
+
        $result = mysqli_query($connection, $query);
        if (!$result) {
         die('Query FAILED' . mysqli_error("init"));
+       } else {
+        echo "Record deleted";
        }
+      }
     }
 ?>
