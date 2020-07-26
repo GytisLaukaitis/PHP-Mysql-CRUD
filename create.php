@@ -8,12 +8,20 @@
             <h1 class = "text-center">Create</h1>
             <form action="create.php" method="post">
                 <div class="form-group">
-                    <label for="username">Username</label>
-                    <input type="text" name="username" class="form-control">
+                    <label for="date">Date</label>
+                    <input type="text" name="date" class="form-control">
                 </div>
                 <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" name="password" class="form-control">
+                    <label for="number">Number</label>
+                    <input type="text" name="number" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="distance">Distance</label>
+                    <input type="text" name="distance" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="time">Time</label>
+                    <input type="text" name="time" class="form-control">
                 </div>
                 <input class="btn btn-primary" type="submit" name="submit" value="CREATE">
             </form>
