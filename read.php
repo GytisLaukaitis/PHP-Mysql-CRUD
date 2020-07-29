@@ -1,6 +1,7 @@
 <?php  include "db.php";?>
 <?php  include "functions.php";?>
 <?php include "includes/header.php";?>
+   <!-- Read from db form -->
     <div class="container">
         <div class="col-sm-6">
         <pre>

@@ -11,9 +11,10 @@
   </tr>
 </thead>
 <tbody>
+  <!-- Insert DB rows to php form -->
   <?php 
   global $connection;
-  $query = "SELECT id,Number FROM radars";
+  $query = "SELECT id,name,project FROM users";
   $result = mysqli_query($connection, $query);
   if (!$result) {
       die('Query FAILED' . mysqli_error($connection));
@@ -21,8 +22,10 @@
    while ($row = mysqli_fetch_assoc($result)) {
     echo '<tr>';
     echo '<td>'. $row['id'] .'</td>';
-    echo '<td>'. $row['Number'] .'</td>';
-    print ( '<td>Comming soon...</td>
+    echo '<td>'. $row['name'] .'</td>';
+    echo '<td>'. $row['project'] .'</td>';
+    // update / delete buttons forms
+    print ( '
     <td><form  style = "display: inline-block"; action="update.php" method="">
     <input class="btn btn-primary ml-4" type="submit" name="submit" value="UPDATE">
     </form>
