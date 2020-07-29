@@ -68,6 +68,7 @@ while ($row = mysqli_fetch_assoc($result)) {
 
 function updateTable() {
 if (isset($_POST['submit'])) {
+  global $connection;
   $date = $_POST['date'];
   $number = $_POST['number'];
   $distance = $_POST['distance'];
@@ -76,14 +77,14 @@ if (isset($_POST['submit'])) {
 
    $query = "UPDATE radars SET ";
    $query .= "date = '$date', ";
-   $query .= "number = '$number' ";
+   $query .= "number = '$number', ";
    $query .= "distance = '$distance', ";
    $query .= "time = '$time' ";
    $query .= "WHERE id = $id ";
-   global $connection;
+   
    $result = mysqli_query($connection, $query);
    if (!$result) {
-    die('Query FAILED' . mysqli_error($connection));
+    die('Query FAILED ' . mysqli_error($connection));
    } else {
      echo "Record updated";
    }
