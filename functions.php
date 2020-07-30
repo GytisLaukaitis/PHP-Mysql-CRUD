@@ -40,13 +40,18 @@ if (isset($_POST['submit'])) {
 // read from sql logic
 function readRows() {
     global $connection;
-    $query = "SELECT * FROM users";
+    $query = "SELECT id,name,surname,age,project FROM users";
     $result = mysqli_query($connection, $query);
     if (!$result) {
         die('Query FAILED' . mysqli_error($connection));
     }
      while ($row = mysqli_fetch_assoc($result)) {
-        print_r($row);
+      echo '<br>';
+      echo 'Id: ' . $row['id'] .'</br>';
+      echo 'Name: ' . $row['name'] .'</br>';
+      echo 'Surname: ' . $row['surname'] .'</br>';
+      echo 'Age: ' . $row['age'] .'</br>';
+      echo 'Project: ' . $row['project'] .'</br>';
     }
 }
 
