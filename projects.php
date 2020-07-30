@@ -23,12 +23,12 @@
 <table class="table table-hover table-dark" style="margin: 0;">
 <thead>
   <tr>
-    <th style= "width: 25%"; scope="col">Id<form  style = "display: inline-block"; action="read.php" method="">
+    <th style= "width: 25%"; scope="col">Id<form  style = "display: inline-block"; action="readProjects.php" method="">
     <input class="btn btn-primary ml-4" type="submit" name="submit" value="Show info">
     </form></th>
     <th style= "width: 25%"; scope="col">Name </th>
-    <th style= "width: 25%"; scope="col">Project</th>
-    <th style= "width: 25%"; scope="col">Action<form  style = "display: inline-block"; action="create.php" method="">
+    <th style= "width: 25%"; scope="col">Project name</th>
+    <th style= "width: 25%"; scope="col">Action<form  style = "display: inline-block"; action="projectsCreate.php" method="">
     <input class="btn btn-primary ml-4" type="submit" name="submit" value="Create record">
     </form></th>
   </tr>
@@ -37,7 +37,7 @@
   <!-- Insert DB rows to php form -->
   <?php 
   global $connection;
-  $query = "SELECT id,name,project FROM users";
+  $query = "SELECT id,Project_name,Deadline FROM projects";
   $result = mysqli_query($connection, $query);
   if (!$result) {
       die('Query FAILED' . mysqli_error($connection));
@@ -45,8 +45,8 @@
    while ($row = mysqli_fetch_assoc($result)) {
     echo '<tr>';
     echo '<td>'. $row['id'] .'</td>';
-    echo '<td>'. $row['name'] .'</td>';
-    echo '<td>'. $row['project'] .'</td>';
+    echo '<td>'. $row['Project_name'] .'</td>';
+    echo '<td>'. $row['Deadline'] .'</td>';
     // update / delete buttons forms
     print ( '
     <td><form  style = "display: inline-block"; action="update.php" method="">
