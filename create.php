@@ -23,7 +23,7 @@
                     <label for="time">Project</label>
                     <input type="text" name="project" class="form-control">
                 </div>
-                <input class="btn btn-primary" type="submit" <?php dirname($_SERVER['REQUEST_URI'], 1) ?> name="submit" value="CREATE">
+                <input class="btn btn-primary" type="submit"  name="submit" value="CREATE">
             </form>
         </div>
  <?php include "includes/footer.php";?>

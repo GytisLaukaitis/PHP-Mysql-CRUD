@@ -12,7 +12,7 @@ if (isset($_POST['submit'])) {
      $surname = mysqli_real_escape_string($connection, $surname);
      $age = mysqli_real_escape_string($connection, $age);
      $project = mysqli_real_escape_string($connection, $project);
-     
+     header("Location: http://127.0.0.1/SQL_CRUD/Crud.php");
 
     //password encryption logic demo
 
@@ -93,6 +93,7 @@ if (isset($_POST['submit'])) {
     die('Query FAILED ' . mysqli_error($connection));
    } else {
      echo "Record updated";
+     header("Location: http://127.0.0.1/SQL_CRUD/Crud.php");
    }
   }
 }
@@ -114,6 +115,7 @@ function deleteRows() {
         die('Query FAILED' . mysqli_error($connection));
        } else {
         echo "Record deleted";
+        header("Location: http://127.0.0.1/SQL_CRUD/Crud.php");
        }
       }
     }
