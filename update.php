@@ -20,8 +20,8 @@
                     <input type="text" name="age" class="form-control">
                 </div>
                 <div class="form-group">
-                    <label for="time">Project</label>
-                    <input type="text" name="project" class="form-control">
+                    <label for="time">Project_id</label>
+                    <input type="text" name="project_id" class="form-control">
                 </div>
                 <div class="form-group">
                     <select name="id" id="">

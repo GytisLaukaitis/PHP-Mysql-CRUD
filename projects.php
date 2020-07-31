@@ -41,7 +41,7 @@
   <!-- Insert DB rows to php form -->
   <?php 
   global $connection;
-  $query = "SELECT id,Project_name,Deadline FROM projects";
+  $query = "SELECT id,Project_name,Deadline,Names FROM projects";
   $result = mysqli_query($connection, $query);
   if (!$result) {
       die('Query FAILED' . mysqli_error($connection));
@@ -49,7 +49,7 @@
    while ($row = mysqli_fetch_assoc($result)) {
     echo '<tr>';
     echo '<td>'. $row['id'] .'</td>';
-    echo '<td></td>';
+    echo '<td>' .$row['Names'] .'</td>';
     echo '<td>'. $row['Project_name'] .'</td>';
     // update / delete buttons forms
     print ( '

@@ -6,8 +6,10 @@ if (isset($_POST['submit'])) {
     global $connection;
     $Project_name = $_POST['Project_name'];
     $Deadline = $_POST['Deadline'];
+    $Names = $_POST['Names'];
      $Project_name = mysqli_real_escape_string($connection, $Project_name);
      $Deadline = mysqli_real_escape_string($connection, $Deadline);
+     $Names = mysqli_real_escape_string($connection, $Names);
      header("Location: http://127.0.0.1/SQL_CRUD/projects.php");
 
  
@@ -15,8 +17,8 @@ if (isset($_POST['submit'])) {
     if (!$connection) {
      die("Database connection failed ");
     }
- $query = "INSERT INTO projects(Project_name, Deadline) ";
- $query  .= "VALUES ('$Project_name ', '$Deadline') ";
+ $query = "INSERT INTO projects(Project_name, Deadline,Names) ";
+ $query  .= "VALUES ('$Project_name ', '$Deadline', 'Names') ";
  
  $result = mysqli_query($connection, $query);
  
@@ -30,7 +32,7 @@ if (isset($_POST['submit'])) {
 // read from sql logic
 function readProjectRows() {
     global $connection;
-    $query = "SELECT id,Project_name,Deadline FROM projects";
+    $query = "SELECT id,Project_name,Deadline,Names FROM projects";
     $result = mysqli_query($connection, $query);
     if (!$result) {
         die('Query FAILED' . mysqli_error($connection));
@@ -40,6 +42,7 @@ function readProjectRows() {
       echo 'Id: ' . $row['id'] .'</br>';
       echo 'Project name : ' . $row['Project_name'] .'</br>';
       echo 'Deadline : ' . $row['Deadline'] .'</br>';
+      echo 'Names : ' . $row['Names'] .'</br>';
      }
 }
 
@@ -65,11 +68,13 @@ if (isset($_POST['submit'])) {
   global $connection;
   $Project_name = $_POST['Project_name'];
   $Deadline = $_POST['Deadline'];
+  $Names = $_POST['Names'];
   $id = $_POST['id'];
 
    $query = "UPDATE projects SET ";
    $query .= "Project_name = '$Project_name', ";
-   $query .= "Deadline = '$Deadline' ";
+   $query .= "Deadline = '$Deadline', ";
+   $query .= "Names = '$Names' ";
    $query .= "WHERE id = $id ";
    
    $result = mysqli_query($connection, $query);

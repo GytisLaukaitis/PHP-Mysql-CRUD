@@ -31,7 +31,7 @@
     <input class="btn btn-primary ml-4" type="submit" name="submit" value="Show info">
     </form></th>
     <th style= "width: 25%"; scope="col">Name </th>
-    <th style= "width: 25%"; scope="col">Project</th>
+    <th style= "width: 25%"; scope="col">Project_id</th>
     <th style= "width: 25%"; scope="col">Action<form  style = "display: inline-block"; action="create.php" method="">
     <input class="btn btn-primary ml-4" type="submit" name="submit" value="Create record">
     </form></th>
@@ -41,7 +41,7 @@
   <!-- Insert DB rows to php form -->
   <?php 
   global $connection;
-  $query = "SELECT id,name,project FROM users";
+  $query = "SELECT id,name,Project_id FROM users";
   $result = mysqli_query($connection, $query);
   if (!$result) {
       die('Query FAILED' . mysqli_error($connection));
@@ -50,7 +50,7 @@
     echo '<tr>';
     echo '<td>'. $row['id'] .'</td>';
     echo '<td>'. $row['name'] .'</td>';
-    echo '<td>'. $row['project'] .'</td>';
+    echo '<td>'. $row['Project_id'] .'</td>';
     // update / delete buttons forms
     print ( '
     <td><form  style = "display: inline-block"; action="update.php" method="">

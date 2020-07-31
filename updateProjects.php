@@ -16,6 +16,10 @@
                     <input type="text" name="Deadline" class="form-control">
                 </div>
                 <div class="form-group">
+                    <label for="number">Names</label>
+                    <input type="text" name="Names" class="form-control">
+                </div>
+                <div class="form-group">
                     <select name="id" id="">
                         <?php
                            showAllProjectDAta();

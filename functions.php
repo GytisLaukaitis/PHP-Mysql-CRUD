@@ -7,11 +7,11 @@ if (isset($_POST['submit'])) {
     $name = $_POST['name'];
     $surname = $_POST['surname'];
     $age = $_POST['age'];
-    $project = $_POST['project'];
+    $Project_id = $_POST['Project_id'];
      $name = mysqli_real_escape_string($connection, $name);
      $surname = mysqli_real_escape_string($connection, $surname);
      $age = mysqli_real_escape_string($connection, $age);
-     $project = mysqli_real_escape_string($connection, $project);
+     $Project_id = mysqli_real_escape_string($connection, $Project_id);
      header("Location: http://127.0.0.1/SQL_CRUD/Crud.php");
 
     //password encryption logic demo
@@ -25,8 +25,8 @@ if (isset($_POST['submit'])) {
     if (!$connection) {
      die("Database connection failed ");
     }
- $query = "INSERT INTO users(name, surname, age, project) ";
- $query  .= "VALUES ('$name', '$surname', '$age', '$project')";
+ $query = "INSERT INTO users(name, surname, age, Project_id) ";
+ $query  .= "VALUES ('$name', '$surname', '$age', '$Project_id')";
  
  $result = mysqli_query($connection, $query);
  
@@ -40,7 +40,7 @@ if (isset($_POST['submit'])) {
 // read from sql logic
 function readRows() {
     global $connection;
-    $query = "SELECT id,name,surname,age,project FROM users";
+    $query = "SELECT id,name,surname,age,Project_id FROM users";
     $result = mysqli_query($connection, $query);
     if (!$result) {
         die('Query FAILED' . mysqli_error($connection));
@@ -51,7 +51,7 @@ function readRows() {
       echo 'Name: ' . $row['name'] .'</br>';
       echo 'Surname: ' . $row['surname'] .'</br>';
       echo 'Age: ' . $row['age'] .'</br>';
-      echo 'Project: ' . $row['project'] .'</br>';
+      echo 'Project: ' . $row['Project_id'] .'</br>';
     }
 }
 
@@ -78,14 +78,14 @@ if (isset($_POST['submit'])) {
   $name = $_POST['name'];
   $surname = $_POST['surname'];
   $age = $_POST['age'];
-  $project = $_POST['project'];
+  $Project_id = $_POST['Project_id'];
   $id = $_POST['id'];
 
    $query = "UPDATE users SET ";
    $query .= "name = '$name', ";
    $query .= "surname = '$surname', ";
    $query .= "age = '$age', ";
-   $query .= "project = '$project' ";
+   $query .= "Project_id = '$Project_id' ";
    $query .= "WHERE id = $id ";
    
    $result = mysqli_query($connection, $query);
