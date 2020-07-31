@@ -11,10 +11,14 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="#">Names <span class="sr-only">(current)</span></a>
+        <form  style = "display: inline-block" action="Crud.php" method="">
+    <input class="btn btn-primary ml-4" type="submit" name="submit" value="Names">
+    </form>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Projects</a>
+        <form  style = "display: inline-block"; action="Projects.php" method="">
+    <input class="btn btn-primary ml-4" type="submit" name="submit" value="Projects">
+    </form>
       </ul>
     </div>
   </nav>
@@ -29,7 +33,7 @@
     <th style= "width: 25%"; scope="col">Name </th>
     <th style= "width: 25%"; scope="col">Project name</th>
     <th style= "width: 25%"; scope="col">Action<form  style = "display: inline-block"; action="projectsCreate.php" method="">
-    <input class="btn btn-primary ml-4" type="submit" name="submit" value="Create record">
+    <input class="btn btn-primary ml-4" type="submit" name="submit" value="Create project">
     </form></th>
   </tr>
 </thead>
@@ -45,14 +49,14 @@
    while ($row = mysqli_fetch_assoc($result)) {
     echo '<tr>';
     echo '<td>'. $row['id'] .'</td>';
+    echo '<td></td>';
     echo '<td>'. $row['Project_name'] .'</td>';
-    echo '<td>'. $row['Deadline'] .'</td>';
     // update / delete buttons forms
     print ( '
-    <td><form  style = "display: inline-block"; action="update.php" method="">
+    <td><form  style = "display: inline-block"; action="updateProjects.php" method="">
     <input class="btn btn-primary ml-4" type="submit" name="submit" value="UPDATE">
     </form>
-    <form style = "display: inline-block"; action="delete.php" method="">
+    <form style = "display: inline-block"; action="deleteProjects.php" method="">
     <input class="btn btn-primary ml-4" type="submit" name="submit" value="DELETE">
     </form></td>');
     echo '</tr>';
@@ -61,7 +65,7 @@
 </tbody>
 </table>
 <!-- Footer for crud.php -->
-<footer class="page-footer font-small unique-color-dark"style="background-color: #FF4E02;"style=";">
+<footer class="page-footer font-small unique-color-dark"style="background-color: #FF4E02;">
   <div class="container" >
     <ul class="list-unstyled list-inline text-center py-2">
     </ul>

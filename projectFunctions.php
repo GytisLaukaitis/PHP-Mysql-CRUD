@@ -83,22 +83,20 @@ if (isset($_POST['submit'])) {
 }
 // delete logic
 function deleteProjectRows() {
-    if (isset($_POST['submit'])) {
-       global $connection;
-       $Project_name = $_POST['Project_name'];
-       $Deadline = $_POST['Deadline'];
-       $id = $_POST['id'];
-    
-       $query = "DELETE FROM projects ";
-       $query .= "WHERE id = $id ";
+  if (isset($_POST['submit'])) {
+     global $connection;
+     $id = $_POST['id'];
+  
+     $query = "DELETE FROM `projects` ";
+     $query .= "WHERE id = $id ";
 
-       $result = mysqli_query($connection, $query);
-       if (!$result) {
-        die('Query FAILED' . mysqli_error($connection));
-       } else {
-        echo "Record deleted";
-        header("Location: http://127.0.0.1/SQL_CRUD/projects.php");
-       }
+     $result = mysqli_query($connection, $query);
+     if (!$result) {
+      die('Query FAILED' . mysqli_error($connection));
+     } else {
+      echo "Record deleted";
+      header("Location: http://127.0.0.1/SQL_CRUD/projects.php");
       }
     }
+  }
 ?>

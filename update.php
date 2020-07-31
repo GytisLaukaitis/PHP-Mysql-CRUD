@@ -5,7 +5,7 @@
 <?php include "includes/header.php";?>
     <div class="container">
         <div class="col-sm-6">
-            <h1 class="text-center">Update</h1>
+            <h1 class="text-center">Update names row by using id</h1>
         <form action="update.php" method="post">
         <div class="form-group">
                     <label for="date">Name</label>

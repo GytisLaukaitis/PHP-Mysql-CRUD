@@ -101,10 +101,6 @@ if (isset($_POST['submit'])) {
 function deleteRows() {
     if (isset($_POST['submit'])) {
        global $connection;
-       $name = $_POST['name'];
-       $surname = $_POST['surname'];
-       $age = $_POST['age'];
-       $project = $_POST['project'];
        $id = $_POST['id'];
     
        $query = "DELETE FROM users ";

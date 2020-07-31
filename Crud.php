@@ -11,10 +11,14 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="#">Names <span class="sr-only">(current)</span></a>
+        <form  style = "display: inline-block"; action="Crud.php" method="">
+    <input class="btn btn-primary ml-4" type="submit" name="submit" value="Names">
+    </form>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Projects</a>
+        <form  style = "display: inline-block"; action="Projects.php" method="">
+    <input class="btn btn-primary ml-4" type="submit" name="submit" value="Projects">
+    </form>
       </ul>
     </div>
   </nav>
