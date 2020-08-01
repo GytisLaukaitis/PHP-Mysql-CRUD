@@ -81,6 +81,7 @@ if (isset($_POST['submit'])) {
   $Project_id = $_POST['Project_id'];
   $id = $_POST['id'];
 
+
    $query = "UPDATE users SET ";
    $query .= "name = '$name', ";
    $query .= "surname = '$surname', ";
@@ -97,6 +98,43 @@ if (isset($_POST['submit'])) {
    }
   }
 }
+// Asign project logic
+function asign() {
+  if (isset($_POST['submit'])) {
+    global $connection;
+      $query = "UPDATE users
+      JOIN projects 
+      ON  users.Project_id = projects.id
+      SET users.Project_id = projects.Project_name";
+      
+     $result = mysqli_query($connection, $query);
+     if (!$result) {
+      die('Query FAILED ' . mysqli_error($connection));
+     } else {
+       echo "Record updated";
+       header("Location: http://127.0.0.1/SQL_CRUD/Crud.php");
+     }
+    }
+ }
+ // Asign name to project logic
+function asignNames() {
+  if (isset($_POST['submit'])) {
+    global $connection;
+      $query = "UPDATE projects
+      JOIN users 
+      ON  projects.Project_name = users.Project_id
+      SET projects.Names = users.Name";
+      
+     $result = mysqli_query($connection, $query);
+     if (!$result) {
+      die('Query FAILED ' . mysqli_error($connection));
+     } else {
+       echo "Record updated";
+       header("Location: http://127.0.0.1/SQL_CRUD/Crud.php");
+     }
+    }
+ }
+
 // delete logic
 function deleteRows() {
     if (isset($_POST['submit'])) {

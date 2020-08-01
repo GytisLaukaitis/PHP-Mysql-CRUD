@@ -19,6 +19,7 @@
         <form  style = "display: inline-block"; action="Projects.php" method="">
     <input class="btn btn-primary ml-4" type="submit" name="submit" value="Projects">
     </form>
+        </li>
       </ul>
     </div>
   </nav>
@@ -55,6 +56,9 @@
     print ( '
     <td><form  style = "display: inline-block"; action="update.php" method="">
     <input class="btn btn-primary ml-4" type="submit" name="submit" value="UPDATE">
+    </form>
+    <form  style = "display: inline-block;" action="asignProjects.php" method="post">
+    <input class="btn btn-primary ml-4" type="submit" name="submit" value="Asign">
     </form>
     <form style = "display: inline-block"; action="delete.php" method="">
     <input class="btn btn-primary ml-4" type="submit" name="submit" value="DELETE">

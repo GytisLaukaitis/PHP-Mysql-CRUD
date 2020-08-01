@@ -21,9 +21,10 @@
                 </div>
                 <div class="form-group">
                     <label for="time">Project_id</label>
-                    <input type="text" name="project_id" class="form-control">
+                    <input type="text" name="Project_id" class="form-control">
                 </div>
                 <div class="form-group">
+                    <span> Choose person's ID you want to update</span>
                     <select name="id" id="">
                         <?php
                            showAllDAta();
