@@ -120,11 +120,13 @@ function asign() {
 function asignNames() {
   if (isset($_POST['submit'])) {
     global $connection;
+    
       $query = "UPDATE projects
-      JOIN users 
-      ON  projects.Project_name = users.Project_id
-      SET projects.Names = users.Name";
-      
+      SET projects.Names =
+      (SELECT group_concat( Name) FROM users
+      WHERE users.Project_id = projects.Project_name
+      GROUP BY users.Project_id)";
+
      $result = mysqli_query($connection, $query);
      if (!$result) {
       die('Query FAILED ' . mysqli_error($connection));

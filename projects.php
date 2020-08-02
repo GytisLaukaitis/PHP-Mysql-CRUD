@@ -30,7 +30,7 @@
     <th style= "width: 25%"; scope="col">Id<form  style = "display: inline-block"; action="readProjects.php" method="">
     <input class="btn btn-primary ml-4" type="submit" name="submit" value="Show info">
     </form></th>
-    <th style= "width: 25%"; scope="col">Name </th>
+    <th style= "width: 25%"; scope="col">Names </th>
     <th style= "width: 25%"; scope="col">Project name</th>
     <th style= "width: 25%"; scope="col">Action<form  style = "display: inline-block"; action="projectsCreate.php" method="">
     <input class="btn btn-primary ml-4" type="submit" name="submit" value="Create project">
