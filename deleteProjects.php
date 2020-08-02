@@ -1,7 +1,7 @@
 <?php  include "db.php";?>
 <?php  include "projectFunctions.php";?>
 <?php deleteProjectRows();?>
-<!-- Delete form -->
+<!-- Delete projects form -->
 <?php include "includes/header.php";?>
     <div class="container">
         <div class="col-sm-6">

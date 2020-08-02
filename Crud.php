@@ -52,7 +52,7 @@
     echo '<td>'. $row['id'] .'</td>';
     echo '<td>'. $row['name'] .'</td>';
     echo '<td>'. $row['Project_id'] .'</td>';
-    // update / delete buttons forms
+    // update / delete / asign buttons forms
     print ( '
     <td><form  style = "display: inline-block"; action="update.php" method="">
     <input class="btn btn-primary ml-4" type="submit" name="submit" value="UPDATE">

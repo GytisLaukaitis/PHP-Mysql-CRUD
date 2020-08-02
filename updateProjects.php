@@ -1,7 +1,7 @@
 <?php  include "db.php";?>
 <?php  include "projectFunctions.php";?>
 <?php updateProjectTable();?>
-<!-- Update form -->
+<!-- Update project form -->
 <?php include "includes/header.php";?>
     <div class="container">
         <div class="col-sm-6">

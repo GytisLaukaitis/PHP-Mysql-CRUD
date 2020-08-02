@@ -116,11 +116,11 @@ function asign() {
      }
     }
  }
- // Asign name to project logic
+ // Asign names to project logic
 function asignNames() {
   if (isset($_POST['submit'])) {
     global $connection;
-    
+
       $query = "UPDATE projects
       SET projects.Names =
       (SELECT group_concat( Name) FROM users

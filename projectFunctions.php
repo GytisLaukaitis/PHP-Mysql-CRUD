@@ -1,8 +1,8 @@
 <?php include "db.php";?>
 <?php
-// create logic
+// create project logic
 function createProjectRows() {
-if (isset($_POST['submit'])) {
+  if (isset($_POST['submit'])) {
     global $connection;
     $Project_name = $_POST['Project_name'];
     $Deadline = $_POST['Deadline'];
@@ -17,8 +17,8 @@ if (isset($_POST['submit'])) {
     if (!$connection) {
      die("Database connection failed ");
     }
- $query = "INSERT INTO projects(Project_name, Deadline,Names) ";
- $query  .= "VALUES ('$Project_name ', '$Deadline', 'Names') ";
+ $query = "INSERT INTO projects(Project_name, Deadline, Names) ";
+ $query  .= "VALUES ('$Project_name', '$Deadline', '$Names')";
  
  $result = mysqli_query($connection, $query);
  
@@ -29,7 +29,7 @@ if (isset($_POST['submit'])) {
     }
   }
 }
-// read from sql logic
+// read project from sql logic
 function readProjectRows() {
     global $connection;
     $query = "SELECT id,Project_name,Deadline,Names FROM projects";
@@ -62,7 +62,7 @@ while ($row = mysqli_fetch_assoc($result)) {
    echo "<option value='$id'>$id</option>" ;
   }
 }
-// update logic
+// update project logic
 function updateProjectTable() {
 if (isset($_POST['submit'])) {
   global $connection;
@@ -86,7 +86,7 @@ if (isset($_POST['submit'])) {
    }
   }
 }
-// delete logic
+// delete project logic
 function deleteProjectRows() {
   if (isset($_POST['submit'])) {
      global $connection;

@@ -1,6 +1,7 @@
 <?php include "db.php";?>
 <?php include "includes/header.php";?>
-<!-- Header for crud.php -->
+<?php include "projectFunctions.php";?>
+<!-- Header for projects.php -->
 <header style="background-color: #FF4E02;">
   <nav class="navbar navbar-expand-lg navbar-dark default-color">
     <a class="navbar-brand" href="#"><strong>Project manager</strong></a>
@@ -38,10 +39,10 @@
   </tr>
 </thead>
 <tbody>
-  <!-- Insert DB rows to php form -->
+  <!-- Insert projects DB rows to php form -->
   <?php 
   global $connection;
-  $query = "SELECT id,Project_name,Deadline,Names FROM projects";
+  $query = "SELECT id,Names,Project_name FROM projects";
   $result = mysqli_query($connection, $query);
   if (!$result) {
       die('Query FAILED' . mysqli_error($connection));
@@ -64,7 +65,7 @@
   ?>
 </tbody>
 </table>
-<!-- Footer for crud.php -->
+<!-- Footer for projects.php -->
 <footer class="page-footer font-small unique-color-dark"style="background-color: #FF4E02;">
   <div class="container" >
     <ul class="list-unstyled list-inline text-center py-2">
