@@ -10,7 +10,7 @@ function createProjectRows() {
      $Project_name = mysqli_real_escape_string($connection, $Project_name);
      $Deadline = mysqli_real_escape_string($connection, $Deadline);
      $Names = mysqli_real_escape_string($connection, $Names);
-     header("Location: http://127.0.0.1/SQL_CRUD/projects.php");
+     header("Location: projects.php");
 
  
     $connection = mysqli_connect('localhost', 'root', 'mysql', 'people');
@@ -82,7 +82,7 @@ if (isset($_POST['submit'])) {
     die('Query FAILED ' . mysqli_error($connection));
    } else {
      echo "Record updated";
-     header("Location: http://127.0.0.1/SQL_CRUD/projects.php");
+     header("Location: projects.php");
    }
   }
 }
@@ -100,7 +100,7 @@ function deleteProjectRows() {
       die('Query FAILED' . mysqli_error($connection));
      } else {
       echo "Record deleted";
-      header("Location: http://127.0.0.1/SQL_CRUD/projects.php");
+      header("Location: projects.php");
       }
     }
   }
