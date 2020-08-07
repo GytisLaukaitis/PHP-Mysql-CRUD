@@ -1,5 +1,6 @@
 <?php include "db.php";?>
 <?php include "includes/header.php";?>
+
 <!-- Header for crud.php -->
 <header style="background-color: #FF4E02;">
   <nav class="navbar navbar-expand-lg navbar-dark default-color">
