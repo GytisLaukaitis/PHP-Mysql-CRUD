@@ -18,6 +18,3 @@
  6. Asign project ID to user (by ID) 
  7. Click Asign
 
-## Link example
-
-[SPRINT](http://127.0.0.1/SQL_CRUD/Crud.php)
